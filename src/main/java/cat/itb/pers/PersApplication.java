@@ -1,5 +1,7 @@
 package cat.itb.pers;
 
+import cat.itb.pers.database.CustomerRepository;
+import cat.itb.pers.model.Customer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -16,7 +18,7 @@ public class PersApplication {
         SpringApplication.run(PersApplication.class);
     }
 
-    @Bean
+    /*@Bean
     public CommandLineRunner demo(CustomerRepository repository) {
         return (args) -> {
             // save a few customers
@@ -52,6 +54,5 @@ public class PersApplication {
             // }
             log.info("");
         };
-    }
-
+    }*/
 }

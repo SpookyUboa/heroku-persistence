@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<a th:href="@{empleats/list}">Llistat d'empleats</a>
+</br>
+<a th:href="@{empleats/new}">Crear nou empleat</a>
+</br>
+<a th:href="@{register}">Registrar nou usuari</a>
+</br>
+
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sortir (Sign Out)"/>
+</form>
+</body>
+</html>

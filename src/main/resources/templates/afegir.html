@@ -1,0 +1,29 @@
+<!-- plantilla afegir.html -->
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Afegir Empleat</title>
+</head>
+<body>
+<!--<form method="post" action="#" th:action="@{/empleats/new/submit}" th:object="${empleatForm}">-->
+<form action="#" method="post" th:action="${empleatForm.id!=0} ?@{/empleats/edit/submit}:@{/empleats/new/submit}"
+      th:object="${empleatForm}">
+    <!-- si el id == 0 és la primera vegada que utilitzo el form, per tant new Empleat -->
+    <!--si el id != 0 ja té valors, i envio per editar, modificar, substituir empleat -->
+
+    <h1 th:text="${empleatForm.id!=0}?'Editar empleat': 'Nou empleat'">bla bla empleat</h1>
+    Id <input id="id" placeholder="1" th:attrappend="readonly=${empleatForm.id!=0}?'readonly':null" th:field="*{id}"
+              type="text"><br/>
+    Nom <input id="nom" placeholder="Nom" th:field="*{nom}" type="text"><br/>
+    Email <input id="email" placeholder="a@a.com" th:field="*{email}" type="text"><br/>
+    Telèfon <input id="telefon" placeholder="93123456" th:field="*{telefon}" type="text"><br/>
+    Directiu <input id="directiu" th:field="*{esDirectiu}" type="checkbox"><br/>
+    <button type="submit">Enviar</button>
+</form>
+</br>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sortir (Sign Out)"/>
+</form>
+</body>
+</html>

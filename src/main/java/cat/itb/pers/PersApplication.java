@@ -18,7 +18,7 @@ public class PersApplication {
         SpringApplication.run(PersApplication.class);
     }
 
-    /*@Bean
+    @Bean
     public CommandLineRunner demo(CustomerRepository repository) {
         return (args) -> {
             // save a few customers
@@ -54,5 +54,5 @@ public class PersApplication {
             // }
             log.info("");
         };
-    }*/
+    }
 }

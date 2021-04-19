@@ -15,13 +15,13 @@ import java.util.Set;
 @Entity
 public class Departament {
     @Id
-    private int id;
+    private int deptId;
     private String nom;
     @OneToMany(mappedBy = "departament")
     private Set<Empleat> empleats;
 
-    public Departament(int id, String nom) {
-        this.id = id;
+    public Departament(int deptId, String nom) {
+        this.deptId = deptId;
         this.nom = nom;
     }
 }

@@ -7,12 +7,13 @@
 </head>
 <body>
 <!--<form method="post" action="#" th:action="@{/empleats/new/submit}" th:object="${empleatForm}">-->
-<form action="#" method="post" th:action="${departamentForm.id!=0} ?@{/departaments/edit/submit}:@{/departaments
+<form action="#" method="post" th:action="${departamentForm.getDeptId!=0} ?@{/departaments/edit/submit}:@{/departaments
 /new/submit}"
       th:object="${departamentForm}">
 
-    <h1 th:text="${departamentForm.id!=0}?'Editar departament': 'Nou departament'">bla bla empleat</h1>
-    Id <input id="id" placeholder="1" th:attrappend="readonly=${departamentForm.id!=0}?'readonly':null" th:field="*{id}"
+    <h1 th:text="${departamentForm.getDeptId!=0}?'Editar departament': 'Nou departament'">bla bla empleat</h1>
+    Id <input id="id" placeholder="1" th:attrappend="readonly=${departamentForm.deptId!=0}?'readonly':null"
+              th:field="*{deptId}"
               type="text"><br/>
     Nom <input id="nom" placeholder="Nom" th:field="*{nom}" type="text"><br/>
     <button type="submit">Enviar</button>

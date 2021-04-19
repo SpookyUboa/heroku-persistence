@@ -26,7 +26,7 @@
         <td th:text="${emp.nom}">Pepe Pérez</td>
         <td th:text="${emp.email}">pepe.perez@ole.com</td>
         <td th:text="${emp.telefon}">123456789</td>
-        <td th:text="${emp.departament.getId()}">Departament</td>
+        <td th:text="${emp.departament.getDeptId()}">Departament</td>
         <td th:text="${emp.esDirectiu}">es o no es</td>
         <td><a th:href="@{/empleats/edit/{id}(id=${emp.id})}">Editar</a></td>
         <td><a th:href="@{/empleats/eliminar(id=${emp.id})}">Eliminar</a></td>

@@ -35,7 +35,7 @@ public class ControladorDepts {
     public String editarDepartament(@PathVariable("id") int n, Model m) {
         Departament dept = new Departament();
         for (Departament d : servei.llistat()) {
-            if (d.getId() == n) {
+            if (d.getDeptId() == n) {
                 dept = d;
                 break;
             }

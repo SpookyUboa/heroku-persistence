@@ -18,10 +18,10 @@
     </thead>
     <tbody>
     <tr th:each="dep : ${llistaDepartaments}">
-        <td th:text="${dep.id}">ID</td>
+        <td th:text="${dep.getDeptId}">ID</td>
         <td th:text="${dep.nom}">Pepe Pérez</td>
-        <td><a th:href="@{/departaments/edit/{id}(id=${dep.id})}">Editar</a></td>
-        <td><a th:href="@{/departaments/eliminar(id=${dep.id})}">Eliminar</a></td>
+        <td><a th:href="@{/departaments/edit/{id}(id=${dep.getDeptId})}">Editar</a></td>
+        <td><a th:href="@{/departaments/eliminar(id=${dep.getDeptId})}">Eliminar</a></td>
         <br/>
 
     </tr>

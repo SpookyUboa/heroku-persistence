@@ -1,9 +1,9 @@
 package cat.itb.pers.database;
 
-import java.util.List;
-
 import cat.itb.pers.model.Customer;
 import org.springframework.data.repository.CrudRepository;
+
+import java.util.List;
 
 public interface CustomerRepository extends CrudRepository<Customer, Long> {
 

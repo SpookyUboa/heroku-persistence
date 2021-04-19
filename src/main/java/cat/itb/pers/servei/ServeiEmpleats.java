@@ -1,5 +1,6 @@
 package cat.itb.pers.servei;
 
+import cat.itb.pers.model.Departament;
 import cat.itb.pers.model.Empleat;
 import org.springframework.stereotype.Service;
 
@@ -24,9 +25,9 @@ public class ServeiEmpleats {
     @PostConstruct
     public void init() {
         repositori.addAll(Arrays.asList(
-                new Empleat(1, "Edu Romero", "eduardojrl927@gmail.com", "321654987", true),
-                new Empleat(2, "Jo Bench", "lanzabolos@terra.com", "321654987", false),
-                new Empleat(3, "Nai Palm", "badgrammar@yahoo.es", "321654987", true)
+                new Empleat(1, "Edu Romero", "eduardojrl927@gmail.com", "321654987", true, new Departament(10, "Vendes")),
+                new Empleat(2, "Jo Bench", "lanzabolos@terra.com", "321654987", false, new Departament(20, "Personal")),
+                new Empleat(3, "Nai Palm", "badgrammar@yahoo.es", "321654987", true, new Departament(30, "Informàtica"))
         ));
     }
 

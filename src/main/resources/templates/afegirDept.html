@@ -1,0 +1,25 @@
+<!-- plantilla afegir.html -->
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Afegir Departament</title>
+</head>
+<body>
+<!--<form method="post" action="#" th:action="@{/empleats/new/submit}" th:object="${empleatForm}">-->
+<form action="#" method="post" th:action="${departamentForm.id!=0} ?@{/departaments/edit/submit}:@{/departaments
+/new/submit}"
+      th:object="${departamentForm}">
+
+    <h1 th:text="${departamentForm.id!=0}?'Editar departament': 'Nou departament'">bla bla empleat</h1>
+    Id <input id="id" placeholder="1" th:attrappend="readonly=${departamentForm.id!=0}?'readonly':null" th:field="*{id}"
+              type="text"><br/>
+    Nom <input id="nom" placeholder="Nom" th:field="*{nom}" type="text"><br/>
+    <button type="submit">Enviar</button>
+</form>
+</br>
+<form method="post" th:action="@{/logout}">
+    <input type="submit" value="Sortir (Sign Out)"/>
+</form>
+</body>
+</html>

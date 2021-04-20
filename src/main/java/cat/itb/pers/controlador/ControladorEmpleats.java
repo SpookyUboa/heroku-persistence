@@ -21,7 +21,6 @@ public class ControladorEmpleats {
 
     @GetMapping("/empleats/new")
     public String afegirEmpleat(Model m) {
-        //cal instanciar l'empleat, pq sino el CommandObject no existeix al formulari
         m.addAttribute("empleatForm", new Empleat());
         return "afegir";
     }
@@ -40,13 +39,7 @@ public class ControladorEmpleats {
 
     @GetMapping("/empleats/edit/{id}")
     public String editarEmpleat(@PathVariable("id") int n, Model m) {
-        Empleat emp = new Empleat();
-        for (Empleat e : servei.llistat()) {
-            if (e.getId() == n) {
-                emp = e;
-                break;
-            }
-        }
+        Empleat emp = servei.consultaPerId(n);
         m.addAttribute("empleatForm", emp);
         return "afegir";
     }

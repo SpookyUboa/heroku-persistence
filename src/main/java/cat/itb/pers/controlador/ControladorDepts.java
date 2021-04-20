@@ -34,9 +34,7 @@ public class ControladorDepts {
 
     @GetMapping("/departaments/edit/{id}")
     public String editarDepartament(@PathVariable("id") int n, Model m) {
-        Departament dept = new Departament();
-
-        dept = servei.consultaPerId(n);
+        Departament dept = servei.consultaPerId(n);
         m.addAttribute("departamentForm", dept);
         return "afegirDept";
     }

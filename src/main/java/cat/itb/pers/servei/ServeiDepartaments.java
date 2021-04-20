@@ -45,7 +45,6 @@ public class ServeiDepartaments {
     }
 
     public void substituir(Departament d) {
-        repositori.deleteById(d.getDeptId());
         repositori.save(d);
     }
 }

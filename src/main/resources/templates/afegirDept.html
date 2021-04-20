@@ -12,7 +12,7 @@
       th:object="${departamentForm}">
 
     <h1 th:text="${departamentForm.getDeptId!=0}?'Editar departament': 'Nou departament'">bla bla empleat</h1>
-    Id <input id="id" placeholder="1" th:attrappend="readonly=${departamentForm.deptId!=0}?'readonly':null"
+    Id <input id="id" placeholder="1" th:attrappend="readonly=${departamentForm.getDeptId!=0}?'readonly':null"
               th:field="*{deptId}"
               type="text"><br/>
     Nom <input id="nom" placeholder="Nom" th:field="*{nom}" type="text"><br/>

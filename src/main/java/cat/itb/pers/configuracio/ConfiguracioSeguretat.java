@@ -29,7 +29,8 @@ public class ConfiguracioSeguretat extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/", "/index", "/h2-console/**", "/login", "/register").permitAll()
-                .antMatchers("/empleats/new", "/empleats/eliminar").hasRole("admin")
+                .antMatchers("/empleats/new", "/empleats/eliminar",
+                        "/departaments/new", "/departaments/eliminar").hasRole("admin")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

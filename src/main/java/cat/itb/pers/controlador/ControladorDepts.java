@@ -1,6 +1,7 @@
 package cat.itb.pers.controlador;
 
 import cat.itb.pers.model.Departament;
+import cat.itb.pers.model.Empleat;
 import cat.itb.pers.servei.ServeiDepartaments;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,17 +32,19 @@ public class ControladorDepts {
         return "redirect:/departaments/list";
     }
 
-    @PostMapping("/departaments/edit/submit")
+    @GetMapping("/departaments/edit/{id}")
     public String editarDepartament(@PathVariable("id") int n, Model m) {
         Departament dept = new Departament();
-        for (Departament d : servei.llistat()) {
-            if (d.getDeptId() == n) {
-                dept = d;
-                break;
-            }
-        }
+
+        dept = servei.consultaPerId(n);
         m.addAttribute("departamentForm", dept);
         return "afegirDept";
+    }
+
+    @PostMapping("/departaments/edit/submit")
+    public String editarDepartamentSubmit(@ModelAttribute("departamentForm") Departament d) {
+        servei.substituir(d);
+        return "redirect:/departaments/list";
     }
 
     @GetMapping("/departaments/eliminar")
